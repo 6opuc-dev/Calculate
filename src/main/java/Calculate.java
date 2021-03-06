@@ -5,6 +5,7 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class Calculate {
     public static void main(String[] args) throws IOException {
         System.out.println("Введите выражение в формате \"число пробел оператор пробел число\"");
@@ -16,6 +17,7 @@ public class Calculate {
         Matcher m = pt.matcher(str);
         Matcher romanM = romanPt.matcher(str.toUpperCase());
         Converter conv = new Converter();
+        Converter2 conv2 = new Converter2();
         try {
             String[] numbers = str.toUpperCase().split(" ");
             if(m.find()){
@@ -26,10 +28,10 @@ public class Calculate {
                 System.out.println("Результат: " + nums.operation());
             }else if(romanM.find()) {
                 NumbersAndOperator nums = new NumbersAndOperator();
-                nums.setNum1(conv.romanToArabic(numbers[0]));
+                nums.setNum1(conv2.convert(numbers[0]));
                 nums.setOperator(numbers[1]);
-                nums.setNum2(conv.romanToArabic(numbers[2]));
-                System.out.println("Результат: " + conv.ArabicToRoman(nums.operation()));
+                nums.setNum2(conv2.convert(numbers[2]));
+                System.out.println("Результат: " + conv2.convert(nums.operation()));
             }else {
                 throw new Exception("Ввод неверен");
             }

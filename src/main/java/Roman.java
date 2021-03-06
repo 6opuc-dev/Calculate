@@ -14,7 +14,4 @@ public enum Roman {
     public int getValue() {
         return value;
     }
-    public String getKey() {
-        return key;
-    }
 }
