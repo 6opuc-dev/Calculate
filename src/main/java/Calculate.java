@@ -19,22 +19,22 @@ public class Calculate {
         Converter2 conv2 = new Converter2();
         try {
             String[] numbers = str.toUpperCase().split(" ");
-            if(m.find()){
+            if (m.find()) {
                 NumbersAndOperator nums = new NumbersAndOperator();
                 nums.setNum1(Integer.parseInt(numbers[0]));
                 nums.setOperator(numbers[1]);
                 nums.setNum2(Integer.parseInt(numbers[2]));
                 System.out.println("Результат: " + nums.operation());
-            }else if(romanM.find()) {
+            } else if (romanM.find()) {
                 NumbersAndOperator nums = new NumbersAndOperator();
                 nums.setNum1(conv2.convert(numbers[0]));
                 nums.setOperator(numbers[1]);
                 nums.setNum2(conv2.convert(numbers[2]));
                 System.out.println("Результат: " + conv2.convert(nums.operation()));
-            }else {
+            } else {
                 throw new Exception("Ввод неверен");
             }
-        }catch (Exception ex) {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
