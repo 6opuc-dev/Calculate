@@ -1,8 +1,9 @@
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Converter2 {
 
-    LinkedHashMap<String, Integer> roman = new LinkedHashMap<>() {{
+    Map<String, Integer> roman = new LinkedHashMap<>() {{
         put("C", 100);
         put("XC", 90);
         put("LXXX", 80);
@@ -24,7 +25,7 @@ public class Converter2 {
         put("I", 1);
     }};
 
-    LinkedHashMap<Integer, String> arabic = new LinkedHashMap<>() {{
+    Map<Integer, String> arabic = new LinkedHashMap<>() {{
         put(100, "C");
         put(90, "XC");
         put(80, "LXXX");
