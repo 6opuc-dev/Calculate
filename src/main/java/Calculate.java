@@ -12,11 +12,10 @@ public class Calculate {
         System.out.println("Допустимы целые числа от 1 до 10. Арабские или римские. Допустимы операторы \"+\",\"-\",\"*\",\"/\".");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
-        Pattern pt = Pattern.compile("^[1-9] [+\\-*/] [1-9]$|^10 [+\\-*/] 10$|^10 [+\\-*/] [1-9]$|^[1-9] [+\\-*/] 10$");
+        Pattern pt = Pattern.compile("^[1-9] [+\\-*/][1-9]$|^10 [+\\-*/] 10$|^10 [+\\-*/] [1-9]$|^[1-9] [+\\-*/] 10$");
         Pattern romanPt = Pattern.compile("^[IV]{1,4} [+\\-*/] [IV]{1,4}$|^I?X? [+\\-*/] [IV]{1,4}$|^[IV]{1,4} [+\\-*/] I?X?$|^I?X? [+\\-*/] I?X?$");
         Matcher m = pt.matcher(str);
         Matcher romanM = romanPt.matcher(str.toUpperCase());
-        Converter conv = new Converter();
         Converter2 conv2 = new Converter2();
         try {
             String[] numbers = str.toUpperCase().split(" ");
