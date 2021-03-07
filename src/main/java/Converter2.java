@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class Converter2 {
 
-    Map<String, Integer> roman = new LinkedHashMap<>() {{
+    static Map<String, Integer> roman = new LinkedHashMap<>() {{
         put("C", 100);
         put("XC", 90);
         put("LXXX", 80);
@@ -25,7 +25,7 @@ public class Converter2 {
         put("I", 1);
     }};
 
-    Map<Integer, String> arabic = new LinkedHashMap<>() {{
+    static Map<Integer, String> arabic = new LinkedHashMap<>() {{
         put(100, "C");
         put(90, "XC");
         put(80, "LXXX");
@@ -47,11 +47,11 @@ public class Converter2 {
         put(1, "I");
     }};
 
-    public int convert(String str) {
+    public static int convert(String str) {
         return roman.get(str);
     }
 
-    public String convert(int num) {
+    public static String convert(int num) {
         StringBuilder strb = new StringBuilder();
         for (int i : roman.values()) {
             if (i <= num) {

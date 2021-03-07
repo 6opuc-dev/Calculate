@@ -1,6 +1,6 @@
-public class NumbersAndOperator {
+public class Operations {
 
-    public int operation (int num1, String operator, int num2) {
+    public static int operation(int num1, String operator, int num2) {
         return switch (operator) {
             case "+" -> num1 + num2;
             case "-" -> num1 - num2;
